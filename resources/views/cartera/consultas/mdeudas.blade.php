@@ -11,8 +11,9 @@
   <nav class="navbar navbar-inverse">
       <ul class="nav navbar-nav">
           <li><a href="{{ URL::to('/consultas') }}">Mas consultas</a></li>
-          <li><a href="{{ URL::to('/consultas/mayor') }}">Dias de mayor recaudo</a></li>
+          <li><a href="{{ URL::to('/consultas/mayor') }}">Historico de menores deudas</a></li>
           <li><a href="{{ URL::to('/consultas/planes') }}">Planes mas solicitados</a></li>
+          <li><a href="{{ URL::to('/consultas/mpagos') }}">Mayores pagos</a></li>
       </ul>
   </nav>
 

@@ -24,6 +24,7 @@ Route::get('/pago/hpago','cartera\PagoController@hpago');
 Route::get('/consultas/planes','cartera\ConsultasController@planes');
 Route::get('/consultas/mayor','cartera\ConsultasController@mayor');
 Route::get('/consultas/mdeudas','cartera\ConsultasController@mdeudas');
+Route::get('/consultas/mpagos','cartera\ConsultasController@mpagos');
 Route::get('/deuda/mora/{id}','cartera\DeudaController@mora');
 
 

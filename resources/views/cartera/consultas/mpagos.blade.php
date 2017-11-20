@@ -7,13 +7,13 @@
 @section('content')
 
   <div class="container">
-    <h1>Historico de menores deudas</h1>
+    <h1>Historico de mayores pagos</h1>
   <nav class="navbar navbar-inverse">
       <ul class="nav navbar-nav">
           <li><a href="{{ URL::to('/consultas') }}">Mas consultas</a></li>
           <li><a href="{{ URL::to('/consultas/planes') }}">Planes mas solicitados</a></li>
           <li><a href="{{ URL::to('/consultas/mdeudas') }}">Historico de mayores deudas</a>
-          <li><a href="{{ URL::to('/consultas/mpagos') }}">Mayores pagos</a></li>
+            <li><a href="{{ URL::to('/consultas/mayores') }}">Historico de menores deudas</a></li>
       </ul>
   </nav>
 
@@ -32,20 +32,20 @@
                 <td>ID. Cliente</td>
                 <td>Nombre del cliente</td>
                 <td>Número de deuda</td>
-                <td>Valor total</td>
-                <td>Estado de la deuda</td>
+                <td>Valor del pago</td>
+                <td>Fecha de pago</td>
             </tr>
         </thead>
         <tbody>
           <?php $a = 1; ?>
-        @foreach($fecha as $fec)
+        @foreach($pagos as $pag)
             <tr>
               <td>{{$a}} <?php $a++; ?></td>
-              <td>{{ $fec->user->id_tipo }}</td>
-              <td>{{ $fec->user->name }}</td>
-              <td>No. Deuda {{ $fec->id_deuda}}</td>
-              <td>{{ $fec->valor_a_pagar }}</td>
-              <td>{{ $fec->estado }}</td>
+              <td>{{ $pag->deuda->user->id_tipo }}</td>
+              <td>{{ $pag->deuda->user->name }}</td>
+              <td>No. Deuda {{ $pag->id_deuda}}</td>
+              <td>{{ $pag->valor }}</td>
+              <td>{{ $pag->created_at }}</td>
           </tr>
         @endforeach
         </tbody>
